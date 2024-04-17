@@ -38,14 +38,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_SCRE, XXXXXXX, KC_UNDO, KC_TAB , KC_PSTE, XXXXXXX,          XXXXXXX  ,   XXXXXXX, KC_UP   , XXXXXXX, XXXXXXX, XXXXXXX,
         KC_CAPS, XXXXXXX, KC_AGIN, KC_COPY, KC_ENT , XXXXXXX,          XXXXXXX  ,   KC_LEFT, KC_DOWN , KC_RGHT, XXXXXXX, XXXXXXX,
         KC_LCTL, XXXXXXX, XXXXXXX, KC_CUT , XXXXXXX, XXXXXXX,          XXXXXXX  ,   KC_HOME, KC_PGDN , KC_PGUP,  KC_END, XXXXXXX,
-                                   KC_RWIN, KC_LSFT, KC_LALT,          XXXXXXX  ,   KC_TRNS, XXXXXXX),
+                                   KC_RWIN, KC_LSFT, KC_LALT,          KC_TRNS  ,   KC_TRNS, XXXXXXX),
 
     [Num] = LAYOUT_ortho_12x5(
-                                  QK_BOOT, XXXXXXX, KC_TRNS,            XXXXXXX, XXXXXXX, XXXXXXX,
+                                  QK_BOOT, XXXXXXX, KC_TRNS,            XXXXXXX, KC_COMM, KC_DOT,
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            KC_EQL ,  KC_7, KC_8, KC_9, XXXXXXX,XXXXXXX,
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            KC_PPLS, KC_4, KC_5, KC_6, KC_PAST,XXXXXXX,
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            KC_PMNS, KC_1, KC_2, KC_3, KC_PSLS,XXXXXXX,
-                                  XXXXXXX, XXXXXXX, XXXXXXX,            KC_COMM, KC_DOT, KC_0)
+                                  XXXXXXX, XXXXXXX, XXXXXXX,            KC_TRNS, MO(Nav), KC_0)
 
 
 

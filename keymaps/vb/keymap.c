@@ -1,13 +1,14 @@
 #include QMK_KEYBOARD_H
 #include <stdio.h>
 
+#define KC_COPY LCTL(KC_C) //copy
+#define KC_CUT LCTL(KC_X) //cut
+#define KC_PSTE LCTL(KC_V)  //paste
+#define KC_UNDO LCTL(KC_Z) //undo
+#define KC_AGIN LCTL(KC_Y) //redo
+#define KC_SCRE LSG(KC_S) //screenshot  WIN+SHIFT+S
+#define KC_RENA KC_F2 //
 
-#define KC_COPY LCTL(KC_C) 
-#define KC_CUT LCTL(KC_X)
-#define KC_PSTE LCTL(KC_V)
-#define KC_UNDO LCTL(KC_Z)
-#define KC_AGIN LCTL(KC_Y)
-#define KC_SCRE XXXXXXX
 enum layer_names {
     Base,
     Num,
@@ -26,26 +27,26 @@ enum my_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [Base] = LAYOUT_ortho_12x5(
-                      KC_ESC, KC_GRV, TG(Num),                KC_TRNS,  KC_9,   KC_0,
-        KC_TAB ,  KC_Q, KC_W, KC_E, KC_R, KC_T,               KC_Y,    KC_U,   KC_I, KC_O,    KC_LBRC,  KC_RBRC,
-        KC_LALT,  KC_A, KC_S, KC_D, KC_F, KC_G,               KC_H,    KC_J,   KC_K, KC_L,    KC_SCLN,  KC_QUOT,
-        KC_LCTL,  KC_Z, KC_X, KC_C, KC_V, KC_B,               KC_N,    KC_M,   KC_P, KC_COMM, KC_DOT,   KC_SLSH,
-                    KC_RWIN, KC_LSFT, KC_SPACE,               KC_BSPC, MO(Nav), KC_ENT),
+                            KC_ESC, KC_9, KC_0,               KC_MINS,   KC_8,KC_BSLS,               
+        KC_TAB ,  KC_Q, KC_W, KC_E, KC_R, KC_T,               KC_Y,      KC_U,   KC_I,    KC_O   , KC_LBRC,  KC_RBRC,
+        KC_LALT,  KC_A, KC_S, KC_D, KC_F, KC_G,               KC_H,      KC_J,   KC_K,    KC_L   , KC_SCLN,  KC_QUOT,
+        KC_LCTL,  KC_Z, KC_X, KC_C, KC_V, KC_B,               KC_N,      KC_M,   KC_P,    KC_COMM, KC_DOT ,   KC_SLSH,
+             LT(Num,KC_GRV), KC_LSFT, KC_SPACE,               KC_BSPC, LT(Nav,KC_DEL), KC_ENT),
 
 
     [Nav] = LAYOUT_ortho_12x5(
-                                   KC_TRNS, XXXXXXX, KC_TRNS,          KC_INSERT,   XXXXXXX, XXXXXXX ,
-        KC_SCRE, XXXXXXX, KC_UNDO, KC_TAB , KC_PSTE, XXXXXXX,          XXXXXXX  ,   XXXXXXX, KC_UP   , XXXXXXX, XXXXXXX, XXXXXXX,
-        KC_CAPS, XXXXXXX, KC_AGIN, KC_COPY, KC_ENT , XXXXXXX,          XXXXXXX  ,   KC_LEFT, KC_DOWN , KC_RGHT, XXXXXXX, XXXXXXX,
-        KC_LCTL, XXXXXXX, XXXXXXX, KC_CUT , XXXXXXX, XXXXXXX,          XXXXXXX  ,   KC_HOME, KC_PGDN , KC_PGUP,  KC_END, XXXXXXX,
-                                   KC_RWIN, KC_LSFT, KC_LALT,          KC_TRNS  ,   KC_TRNS, XXXXXXX),
+                                   KC_TRNS, XXXXXXX, KC_TRNS,          KC_INSERT,   XXXXXXX, KC_F11 ,
+        KC_TRNS, KC_RENA, XXXXXXX, KC_TAB , KC_PSTE, XXXXXXX,          XXXXXXX  ,   XXXXXXX, KC_UP   , XXXXXXX, XXXXXXX, XXXXXXX,
+        KC_TRNS, KC_SCRE, XXXXXXX, KC_UNDO, KC_COPY, XXXXXXX,          XXXXXXX  ,   KC_LEFT, KC_DOWN , KC_RGHT, XXXXXXX, XXXXXXX,
+        KC_TRNS, XXXXXXX, KC_F4,   KC_AGIN, KC_CUT , XXXXXXX,          XXXXXXX  ,   KC_HOME, KC_PGDN , KC_PGUP,  KC_END, XXXXXXX,
+                                   KC_RWIN, KC_TRNS, KC_TRNS,          KC_TRNS  ,   KC_TRNS, KC_TRNS),
 
     [Num] = LAYOUT_ortho_12x5(
-                                  QK_BOOT, XXXXXXX, KC_TRNS,            XXXXXXX, KC_COMM, KC_DOT,
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            KC_EQL ,  KC_7, KC_8, KC_9, XXXXXXX,XXXXXXX,
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            KC_PPLS, KC_4, KC_5, KC_6, KC_PAST,XXXXXXX,
+                                  KC_TRNS, XXXXXXX, KC_TRNS,            XXXXXXX, KC_COMM, KC_DOT,
+       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            KC_EQL , KC_7, KC_8, KC_9, KC_0,   XXXXXXX,
+       KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            KC_PPLS, KC_4, KC_5, KC_6, KC_PAST,XXXXXXX,
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            KC_PMNS, KC_1, KC_2, KC_3, KC_PSLS,XXXXXXX,
-                                  XXXXXXX, XXXXXXX, XXXXXXX,            KC_TRNS, MO(Nav), KC_0)
+                                  KC_TRNS, KC_LSFT, KC_TRNS,            KC_TRNS, KC_TRNS, KC_TRNS)
 
 
 

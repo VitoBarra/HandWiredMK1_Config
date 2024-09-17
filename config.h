@@ -1,5 +1,5 @@
-// Copyright 2024 Federico (@Mitra98t)
-// SPDX-License-Identifier: GPL-2.0-or-later
+// Copyright 2024 Vito (@VitoBarra)
+// SPDX-License-Identifier: MIT
 
 #pragma once
 
@@ -20,6 +20,10 @@
 
 #ifdef OLED_ENABLE
 #   define OLED_TIMEOUT 60000
+#endif
+
+#ifdef TAP_DANCE_ENABLE
+#   define TAPPING_TERM 175
 #endif
 
 /* disable debug print */
